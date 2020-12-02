@@ -1,0 +1,30 @@
+- MODULES 
+- SYSTEMS 
+- ROLES
+- ...PROFILES...
+
+endpoint:
+1. todos los sistemas con sus modulos (tree)
+---
+2. todos los sistemas (expansible)
+3. todos los modulos de un sistema (expansible)
+---
+
+4. peticiones de roles...
+
+{
+    idSistema: ...,
+    name: ...,
+    Moduelos : [
+        {
+            idPerfil
+            id: ..
+            silotiene: true / false,
+            permiso: ...
+            idSoyPapa: ... 
+        }
+    ]
+}
+
+
+5. users y autenticarlos(creo un token)..
