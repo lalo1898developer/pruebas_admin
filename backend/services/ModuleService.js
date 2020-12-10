@@ -12,6 +12,8 @@ module.exports = {
 
     readAllChild: (id_system, id_module) => Module.find({ 'System': id_system, 'Module': id_module }),
 
+    readMany: (idsSystem) => Module.find({'System': { $in: idsSystem}}),
+
     updateOne: (id_module, body) => Module.findByIdAndUpdate(id_module, body, { new: true })
 
 }
