@@ -8,6 +8,8 @@ module.exports = {
 
     readAll: () => Role.find(),
 
+    readMany: (ids) => Role.find({'_id': { $in: ids}}),
+
     updateOne: (id_role, name) => Role.findByIdAndUpdate(id_role, {name}, { new: true })
 
 }

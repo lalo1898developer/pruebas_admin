@@ -8,6 +8,8 @@ module.exports = {
 
     readAll: (id_role) => Profile.find({ 'Role': id_role }),
 
+    readMany: (idsRole) => Profile.find({'Role': { $in: idsRole}}),
+
     updateOne: (id_profile, permission) => Profile.findByIdAndUpdate(id_profile, {permission}, { new: true }),
 
     deleteOne: (id_profile) => Profile.findByIdAndRemove(id_profile)
