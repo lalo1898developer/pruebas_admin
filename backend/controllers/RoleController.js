@@ -160,7 +160,7 @@ module.exports = {
             const profilesForCreate = [];
             req.body.profiles.forEach(profile => {
                 if(profile.hasOwnProperty('Module') && profile.hasOwnProperty('permission') && !profile.hasOwnProperty('Profile')){
-                    console.log(profile);
+                    Object.assign(profile, {Role: req.params.id_role});
                     profilesForCreate.push(profile);
                 }
             });
