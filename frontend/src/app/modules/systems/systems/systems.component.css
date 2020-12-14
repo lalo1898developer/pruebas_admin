@@ -1,0 +1,15 @@
+.level1{
+    padding-top: 10px;
+}
+
+.level2{
+    padding-left: 30px;
+}
+
+.mat-expansion-panel{
+    box-shadow: none;
+}
+
+.level3{
+    padding-left: 120px !important;
+}

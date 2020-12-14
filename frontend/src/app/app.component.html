@@ -1,1 +1,54 @@
-<router-outlet></router-outlet>
+<div class="example-container">
+
+    <!-- Toolbar -->
+    <mat-toolbar class="example-toolbar">
+  
+      <!-- Toolbar Row -->
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="snav.toggle()" (click)="fabToggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar-row>
+  
+      <!-- Toolbar Row -->
+      <mat-toolbar-row>
+        <h1 class="example-app-name mr-5">Pruebas admin</h1>
+      </mat-toolbar-row>
+      <!-- Toolbar Row -->
+  
+    </mat-toolbar>
+    <!-- Toolbar -->
+  
+    <!-- Sidenav -->
+    <mat-sidenav-container class="example-sidenav-container">
+      <mat-sidenav (openedChange)="fabToggle()" class="sidenav" #snav mode="over">
+  
+        <!-- FillerNav -->
+        <mat-nav-list>
+          <a mat-list-item (click)="snav.toggle()" (click)="fabToggle()" [routerLink]="nav.route"
+            *ngFor="let nav of fillerNav">
+            <mat-icon class="nav-icon">{{nav.icon}}</mat-icon>{{nav.name}}
+          </a>
+        </mat-nav-list>
+        <!-- FillerNav -->
+  
+        <!-- Languaje -->
+        <mat-nav-list>
+          <button [matMenuTriggerFor]="menu" mat-button>
+            <mat-icon>language</mat-icon>&nbsp; <span>Lenguaje</span>
+          </button>
+          <mat-menu #menu="matMenu" class="mat-footer-cell" id="menus">
+            <button class="button-footer" (click)="snav.toggle()" (click)="fabToggle()"
+              mat-menu-item>Inglés</button>
+            <button class="button-footer" (click)="snav.toggle()" (click)="fabToggle()"
+              mat-menu-item>Español</button>
+          </mat-menu>
+        </mat-nav-list>
+        <!-- Languaje -->
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="sidenav-content">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

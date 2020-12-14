@@ -1,0 +1,53 @@
+<mat-accordion *ngIf='systems'>
+    <mat-expansion-panel (opened)='getModules(system._id)' *ngFor='let system of systems'>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <p class="level1">
+                    <button mat-icon-button>
+                        <mat-icon id="expanded">
+
+                        </mat-icon>
+                    </button>
+                    {{system.name}}
+                    <button mat-icon-button (click)="addModule(system._id)">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </p>
+
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <p class="level2" *ngIf='!hasModules() && ModuleProgress == 1'>No hay nada que mostrar.</p>
+
+        <mat-accordion *ngIf='hasModules() && ModuleProgress == 1'>
+            <mat-expansion-panel *ngFor='let module of modules' (opened)='getSubModules(module.System, module._id)'>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <p class="level2">
+                            <button mat-icon-button>
+                                <mat-icon id="expanded">
+
+                                </mat-icon>
+                            </button>
+                            {{module.name}}
+                            <button mat-icon-button (click)="addSubmodule(system._id, module._id)">
+                                <mat-icon>add</mat-icon>
+                            </button></p>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <p class="level3" *ngIf='!hasSubmodules() && SubmoduleProgress == 1'>No hay nada que mostrar.</p>
+
+                <div *ngIf='hasSubmodules() && SubmoduleProgress == 1'>
+                    <p class="level3" *ngFor='let submodule of submodules'>
+                        {{submodule.name}}
+                    </p>
+                </div>
+                
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p *ngIf='!systems'>No hay nada que mostrar</p>

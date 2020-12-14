@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SystemsTreeComponent } from './modules/tree/systems-tree/systems-tree.component';
+import { LoginFormComponent } from './modules/login/login-form/login-form.component';
 
 const routes: Routes = [
+  {path: '', component: LoginFormComponent}
 ];
 
 @NgModule({

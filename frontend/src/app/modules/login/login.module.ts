@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card'; 
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatTableModule } from '@angular/material/table'; 
 import { MatExpansionModule } from '@angular/material/expansion'; 
@@ -11,20 +12,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; //this to use ngModule
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatProgressBarModule } from '@angular/material/progress-bar'; 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MatTreeModule } from '@angular/material/tree'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import { RolesRoutingModule } from './roles-routing.module';
-import { RolesTreeComponent } from './roles-tree/roles-tree.component';
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
-  declarations: [RolesTreeComponent],
+  declarations: [LoginFormComponent],
   imports: [
     CommonModule,
-    RolesRoutingModule,
+    LoginRoutingModule,
+    MatCardModule,
     MatButtonModule,
     MatTableModule,
     MatExpansionModule,
@@ -43,4 +45,4 @@ import { RolesTreeComponent } from './roles-tree/roles-tree.component';
     ReactiveFormsModule
   ]
 })
-export class RolesModule { }
+export class LoginModule { }

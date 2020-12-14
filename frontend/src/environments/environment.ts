@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  api_endpoint: 'https://3d987999195f.ngrok.io/api/test/'
+  //api_endpoint: 'https://3d987999195f.ngrok.io/api/test/'
   //api_endpoint: 'https://virtserver.swaggerhub.com/ERR/API/2.0.0/' 
+  api_endpoint: 'http://localhost:3000/api/test/'
 };
 
 /*

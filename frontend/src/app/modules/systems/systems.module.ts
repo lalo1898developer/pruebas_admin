@@ -11,20 +11,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; //this to use ngModule
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatProgressBarModule } from '@angular/material/progress-bar'; 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MatTreeModule } from '@angular/material/tree'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import { RolesRoutingModule } from './roles-routing.module';
-import { RolesTreeComponent } from './roles-tree/roles-tree.component';
+import { SystemsRoutingModule } from './systems-routing.module';
+import { SystemsComponent } from './systems/systems.component';
 
 
 @NgModule({
-  declarations: [RolesTreeComponent],
+  declarations: [SystemsComponent],
   imports: [
     CommonModule,
-    RolesRoutingModule,
+    SystemsRoutingModule,
     MatButtonModule,
     MatTableModule,
     MatExpansionModule,
@@ -43,4 +43,4 @@ import { RolesTreeComponent } from './roles-tree/roles-tree.component';
     ReactiveFormsModule
   ]
 })
-export class RolesModule { }
+export class SystemsModule { }

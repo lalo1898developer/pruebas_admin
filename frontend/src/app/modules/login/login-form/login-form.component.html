@@ -1,0 +1,38 @@
+<article class="container">
+    <section class="card-container">
+        <div class="login-main" fxLayout="row" fxLayoutAlign="center center">
+            <mat-card class="mat-elevation-z8">
+                <mat-card-header fxLayoutAlign="center">
+                    <mat-card-title>Iniciar sesión</mat-card-title>
+                </mat-card-header>
+                <form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+                    <mat-card-content fxLayout="column">
+                        <mat-form-field appearance="fill" class="col-12">
+                            <mat-icon matPrefix>face</mat-icon>
+                            <input [errorStateMatcher]="matcher"
+                                   autocomplete="true"
+                                   formControlName="inputEmail"
+                                   matInput
+                                   placeholder="Correo"
+                                   required
+                                   type="email">
+                            <mat-label>Correo</mat-label>
+                            <mat-error
+                                    *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Correo inválido
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Correo <strong>Es requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </mat-card-content>
+                    <mat-card-actions align="end" class="col-12">
+                        <button (keydown.enter)="$event.preventDefault()" color="primary" mat-stroked-button
+                                type="submit">Enviar</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card>
+        </div>
+    </section>
+
+</article>
